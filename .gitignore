@@ -8,8 +8,8 @@
 /.bundle
 
 # Ignore frontend bundles and modules.
-/bundle.js/*
-/bundle.js.map
+bundle.js
+bundle.js.map
 /node_modules/
 
 # Ignore all logfiles and tempfiles.
