@@ -4,10 +4,10 @@ class Api::SessionsController < ApplicationController
     #if user is nil, render :new view
     #else, login render api/users/show
     @user = User.find_by_credentials(
-      username: params[:user][:username], 
-      password: params[:user][:password]
+      params[:user][:username], 
+      params[:user][:password]
     )
-    if @user.nil
+    if @user.nil?
       render json: ["Invalid username/password combination"], status: 401
     else
       login(@user)
