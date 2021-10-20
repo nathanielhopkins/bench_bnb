@@ -18,7 +18,7 @@ class User < ApplicationRecord
     # Set temporary instance variable so that we can validate length
     @password = password
     # Create a password_digest so that we do not have to store the plain-text password in our DB
-    self.password_digest = BCrypt::Password.create('password')
+    self.password_digest = BCrypt::Password.create(password)
   end
 
   def is_password?(password)
