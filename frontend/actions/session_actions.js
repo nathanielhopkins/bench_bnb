@@ -21,7 +21,7 @@ export const receiveErrors = errors => ({
 export const login = user => dispatch => {
   APISessionUtils.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-    err => dispatch(recieveErrors(err.responseJSON)));
+    err => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const logout = () => dispatch => {
@@ -32,5 +32,5 @@ export const logout = () => dispatch => {
 export const signup = user => dispatch => {
   APISessionUtils.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-    err => dispatch(recieveErrors(err.responseJSON)));
+    err => dispatch(receiveErrors(err.responseJSON)));
 }
