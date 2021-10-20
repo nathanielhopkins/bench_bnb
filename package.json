@@ -1,5 +1,4 @@
-{
-  "name": "bench_bnb",
+{ "name": "bench_bnb",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.15.8",
