@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+export default class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm({user: user});
   }
 
   render() {
@@ -28,34 +28,34 @@ class SessionForm extends React.Component {
     const linkTo = formType == 'login' ? '/signup' : '/login';
     const linkToLabel = formType == 'login' ? "Sign Up" : "Log In";
 
-    if (this.props.currentUser) {
-      <Redirect to="/" />
-    };
-
-    return(
+    const formRender = (
       <div className='session-form'>
         <h1 className='form-header'>{header}</h1>
         <form>
           <label>Username:
-            <input 
+            <input
               type='text'
               onChange={this.update('username')}
               value={this.state.username}
             />
           </label>
-          <label>Password: 
+          <label>Password:
             <input
               type='password'
               onChange={this.update('password')}
               value={this.state.password}
             />
           </label>
-          <button 
-          onClick={this.handleSubmit.bind(this)}
+          <button
+            onClick={this.handleSubmit.bind(this)}
           >{header}</button>
         </form>
         <Link to={linkTo}>{linkToLabel}</Link>
       </div>
+    );
+    
+    return(
+      this.props.currentUser.id ? <Redirect to='/' /> : formRender
     )
   }
 }
