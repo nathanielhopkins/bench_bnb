@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  window.dispatch = store.dispatch;
-  window.getState = store.dispatch;
+  window.store = store;
   window.fetchBenches = fetchBenches;
 
 
