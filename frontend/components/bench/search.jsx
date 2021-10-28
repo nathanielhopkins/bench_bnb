@@ -7,9 +7,13 @@ class Search extends React.Component {
     const { benches, fetchBenches } = this.props;
     
     return(
-      <div>
-        <BenchMap />
-        <BenchIndex benches={benches}  fetchBenches={fetchBenches} />
+      <div className='user-pane'>
+        <div className='left-pane'>
+          <BenchMap />
+        </div>
+        <div className='right-pane'>
+          <BenchIndex benches={benches}  fetchBenches={fetchBenches} />
+        </div>
       </div>
     )
   }

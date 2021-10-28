@@ -18,3 +18,12 @@
   width: 500px;
   height: 500px;
 }
+
+.user-pane {
+  display: flex;
+  flex-direction: row;
+}
+
+.right-pane {
+  margin: 40px;
+}
