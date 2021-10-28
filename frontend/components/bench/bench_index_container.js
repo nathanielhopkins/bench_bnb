@@ -3,7 +3,7 @@ import BenchIndex from './bench_index';
 import { fetchBenches } from '../../actions/bench_actions'
 
 const mapStateToProps = state => ({
-  benches: state.entities.benches
+  benches: Object.values(state.entities.benches)
 });
 
 const mapDispatchToProps = dispatch => ({
