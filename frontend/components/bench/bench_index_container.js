@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BenchIndex from './bench_index';
-import fetchBenches from '../../actions/bench_actions'
+import { fetchBenches } from '../../actions/bench_actions'
 
 const mapStateToProps = state => ({
   benches: state.entities.benches
