@@ -1,0 +1,21 @@
+import React from 'react';
+
+class BenchIndex extends React.Component {
+  componentDidMount() {
+    this.props.fetchBenches();
+  }
+
+  render() {
+    const benches = this.props.benches.map(bench => (
+      <BenchIndexItem key={bench.id} bench={bench} />
+    ));
+    return (
+      <div>
+        <h1>Benches:</h1>
+        <ul>{benches}</ul>
+      </div>
+    )
+  }
+}
+
+export default BenchIndex;
