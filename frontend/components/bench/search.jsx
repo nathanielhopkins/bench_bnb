@@ -9,7 +9,7 @@ class Search extends React.Component {
     return(
       <div className='user-pane'>
         <div className='left-pane'>
-          <BenchMap />
+          <BenchMap benches={benches} />
         </div>
         <div className='right-pane'>
           <BenchIndex benches={benches}  fetchBenches={fetchBenches} />
