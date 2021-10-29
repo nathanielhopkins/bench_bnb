@@ -12,7 +12,6 @@ export default class MarkerManager {
         this.createMarkerFromBench(bench);
       };
     });
-    window.markers = this.markers
   }
 
   createMarkerFromBench(bench) {
@@ -20,6 +19,7 @@ export default class MarkerManager {
     let newMarker = new google.maps.Marker({
       position: { lat: bench.lat, lng: bench.lng },
       map,
+      title: bench.id.toString()
     });
     
     this.markers[bench.id] = newMarker
