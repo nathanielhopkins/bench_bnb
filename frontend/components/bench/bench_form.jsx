@@ -7,17 +7,27 @@ class BenchForm extends React.Component {
     super(props)
     this.state={
       description: "",
-      seating: null,
-      lat: null,
-      lng: null
+      seating: 2,
+      lat: 0,
+      lng: 0
     }
 
     this.cancelForm = this.cancelForm.bind(this);
+    this.update = this.update.bind(this);
   }
 
   cancelForm (e) {
     e.preventDefault();
     this.props.history.replace("/")
+  }
+
+  update(property) {
+    return e => this.setState({ [property]: e.target.value })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.state);
   }
 
   render() {
@@ -29,19 +39,23 @@ class BenchForm extends React.Component {
             <input 
               type='text' 
               className='bench-field'
+              value={this.state.description}
+              onChange={this.update('description')}
             />
           </label>
           <label className='bench-field'>Number of Seats:
             <input
               type='number'
               className='bench-field'
-              defaultValue='2'
+              value={this.state.seating}
+              onChange={this.update('seating')}
             />
           </label>
           <label className='bench-field'>Latitude:
             <input
               type='number'
               className='bench-field'
+              value={this.state.lat}
               disabled
             />
           </label>
@@ -49,6 +63,7 @@ class BenchForm extends React.Component {
             <input
               type='number'
               className='bench-field'
+              value={this.state.lng}
               disabled
             />
           </label>
@@ -57,6 +72,7 @@ class BenchForm extends React.Component {
               type="submit" 
               value="Create Bench" 
               className="bench-form-button"
+              onClick={this.handleSubmit.bind(this)}
             />
           </div>
         </form>
