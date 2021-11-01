@@ -4,7 +4,7 @@ import BenchMap from './bench_map';
 
 class Search extends React.Component {
   render() {
-    const { benches, fetchBenches, updateBounds } = this.props;
+    const { benches, updateBounds } = this.props;
     
     return(
       <div className='user-pane'>
