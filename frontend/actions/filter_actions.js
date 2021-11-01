@@ -10,6 +10,6 @@ export const actionUpdateBounds = bounds => ({
 export const updateBounds = bounds => {
   return (dispatch, getState) => {
     dispatch(actionUpdateBounds(bounds));
-    return fetchBenches(getState().ui.filter)(dispatch)
+    return fetchBenches(getState().ui.filters)(dispatch)
   };
 }
