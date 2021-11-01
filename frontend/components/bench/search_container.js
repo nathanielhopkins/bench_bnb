@@ -8,7 +8,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchBenches: () => dispatch(fetchBenches()),
   updateBounds: bounds => dispatch(updateBounds(bounds))
 });
 
