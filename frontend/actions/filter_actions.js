@@ -1,6 +1,15 @@
 export const UPDATE_BOUNDS = 'UPDATE_BOUNDS';
 
-export const updateBounds = bounds => ({
+import { fetchBenches } from "./bench_actions";
+
+export const actionUpdateBounds = bounds => ({
   type: UPDATE_BOUNDS,
   bounds
 });
+
+export const updateBounds = bounds => {
+  return (dispatch, getState) => {
+    dispatch(actionUpdateBounds(bounds));
+    return fetchBenches(getState().ui.filter)(dispatch)
+  };
+}
