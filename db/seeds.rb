@@ -9,6 +9,7 @@
 
 #Bench seeds
 
-b1 = Bench.create!(lat: 37.772699, lng: -122.464355, description: 'Beautiful green stretch bench in Golden Gate Park')
-b2 = Bench.create!(lat: 37.759114, lng: -122.422802, description: 'Modest bench among a row of benches; courtside view of tennis at Mission Playground')
-b3 = Bench.create!(lat: 37.784809691653955, lng: -122.40222970016015, description: 'Backless two-seater circling Yerba Buena Gardens') 
+b1 = Bench.create!(seating: 10, lat: 37.772699, lng: -122.464355, description: 'Beautiful green stretch bench in Golden Gate Park')
+b2 = Bench.create!(seating: 4, lat: 37.759114, lng: -122.422802, description: 'Modest bench among a row of benches; courtside view of tennis at Mission Playground')
+b3 = Bench.create!(seating: 2, lat: 37.784809691653955, lng: -122.40222970016015, description: 'Backless two-seater circling Yerba Buena Gardens') 
+b4 = Bench.create!(seating: 2, lat: 37.78160139416755, lng: -122.38716945206654, description: 'Small bench overlooking South Beach')
