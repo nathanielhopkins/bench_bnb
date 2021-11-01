@@ -30,10 +30,22 @@ class BenchMap extends React.Component {
       // dispatch new bounds with updateBounds
       this.props.updateBounds(bounds);
     });
+
+    // add click handler to map
+    this.map.addListener('click', (e) => {
+      this.handleClick(e.latLng);
+    })
   };
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.benches);
+  }
+
+  handleClick(coords) {
+    this.props.history.push({
+      pathname: 'benches/new',
+      search: `lat=${coords.lat()}%lng=${coords.lng()}`
+    });
   }
 
   render() {
