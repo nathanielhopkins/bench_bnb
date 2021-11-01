@@ -12,7 +12,7 @@ class Search extends React.Component {
           <BenchMap benches={benches} updateBounds={updateBounds} />
         </div>
         <div className='right-pane'>
-          <BenchIndex benches={benches}  fetchBenches={fetchBenches} />
+          <BenchIndex benches={benches} />
         </div>
       </div>
     )
