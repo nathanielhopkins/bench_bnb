@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import MarkerManager from '../../util/marker_manager';
 
 class BenchMap extends React.Component {
@@ -45,4 +46,4 @@ class BenchMap extends React.Component {
   }
 }
 
-export default BenchMap;
+export default withRouter(BenchMap);
