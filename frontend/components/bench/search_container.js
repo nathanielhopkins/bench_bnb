@@ -3,7 +3,9 @@ import Search from './search';
 import { updateFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = state => ({
-  benches: Object.values(state.entities.benches)
+  benches: Object.values(state.entities.benches),
+  minSeating: state.ui.filters.minSeating,
+  maxSeating: state.ui.filters.maxSeating
 });
 
 const mapDispatchToProps = dispatch => ({
