@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import Search from './search';
-import { updateBounds } from '../../actions/filter_actions';
+import { updateFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = state => ({
   benches: Object.values(state.entities.benches)
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateBounds: bounds => dispatch(updateBounds(bounds))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
