@@ -8,15 +8,22 @@ export const actionUpdateBounds = bounds => ({
   bounds
 });
 
-export const updateFilter = (filter, value) => ({
+export const changeFilter = (filter, value) => ({
   type: UPDATE_FILTER,
   filter,
   value
 });
 
-export const updateBounds = bounds => {
+// export const updateBounds = bounds => {
+//   return (dispatch, getState) => {
+//     dispatch(actionUpdateBounds(bounds));
+//     return fetchBenches(getState().ui.filters)(dispatch)
+//   };
+// }
+
+export function updateFilter(filter, value) {
   return (dispatch, getState) => {
-    dispatch(actionUpdateBounds(bounds));
-    return fetchBenches(getState().ui.filters)(dispatch)
+    dispatch(changeFilter(filter, value));
+    return fetchBenches(getState().ui.filters)(dispatch);
   };
 }
