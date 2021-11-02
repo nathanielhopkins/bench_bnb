@@ -17,7 +17,7 @@ class BenchMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.benches);
 
-    // create idle listener that calls updateBounds
+    // create idle listener that calls updateFilter with new bounds
     this.map.addListener("idle", () => {
       // retrieve raw bounds data and package as bounds for API
       let rawBounds = this.map.getBounds();
@@ -27,8 +27,8 @@ class BenchMap extends React.Component {
         "northEast": {"lat": nE.lat(), "lng": nE.lng()},
         "southWest": {"lat": sW.lat(), "lng": sW.lng()}
       };
-      // dispatch new bounds with updateBounds
-      this.props.updateBounds(bounds);
+      // dispatch new bounds with updateFilter
+      this.props.updateFilter('bounds', bounds);
     });
 
     // add click handler to map
