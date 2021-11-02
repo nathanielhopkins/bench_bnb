@@ -8,8 +8,8 @@ class BenchForm extends React.Component {
     this.state={
       description: "",
       seating: 2,
-      lat: 0,
-      lng: 0
+      lat: this.props.lat,
+      lng: this.props.lng
     }
 
     this.cancelForm = this.cancelForm.bind(this);
