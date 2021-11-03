@@ -6,8 +6,12 @@ class BenchShow extends React.Component {
     super(props)
   }
 
+  componentWillMount() {
+    this.setState({bench: this.props.fetchBench(this.props.benchId)})
+  }
+
   render() {
-    const bench = this.props;
+    const bench = this.state.bench;
     const mapCenter = {
       center: { lat: bench.lat, lng: bench.lng }, // bench coords
       zoom: 13
