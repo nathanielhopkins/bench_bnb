@@ -7,6 +7,14 @@ export const fetchBenches = (filters) => {
   })
 }
 
+export const fetchBench = benchId => {
+  const url = `/api/benches/${benchId}`
+  return $.ajax({
+    method: 'GET',
+    url: url
+  })
+}
+
 export const createBench = (bench) => {
   return $.ajax({
     method: 'POST',
