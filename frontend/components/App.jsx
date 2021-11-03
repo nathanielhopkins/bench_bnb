@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
@@ -14,12 +14,13 @@ const App = () => (
       <h1>Bench BnB</h1>
       <GreetingContainer />
     </header>
-
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute path='/benches/new' component={BenchFormContainer} />
-    <Route path='/benches/:benchId' component={BenchShowContainer} />
-    <Route exact path="/" component={SearchContainer} />
+    <Switch>
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute path='/benches/new' component={BenchFormContainer} />
+      <Route path='/benches/:benchId' component={BenchShowContainer} />
+      <Route exact path="/" component={SearchContainer} />
+    </Switch>
   </div>
 );
 
