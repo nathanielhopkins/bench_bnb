@@ -6,28 +6,27 @@ class BenchShow extends React.Component {
     super(props)
   }
 
-  componentWillMount() {
-    this.setState({bench: this.props.fetchBench(this.props.benchId)})
+  componentDidMount() {
+    this.props.fetchBench(this.props.benchId)
   }
 
   render() {
-    const bench = this.state.bench;
-    const mapCenter = {
-      center: { lat: bench.lat, lng: bench.lng }, // bench coords
-      zoom: 13
-    }
+    const { bench, benchId, fetchBench } = this.props;
+    const benches = {
+      [benchId]: bench
+    };
+    
     return(
       <div className="bench-show">
         <div className='bench-show-map'>
-          <BenchMap benches={bench} mapCenter={mapCenter} />
+          <BenchMap 
+            benches={benches} 
+            benchId={benchId}
+            fetchBench={fetchBench}
+            singleBench={true}
+          />
         </div>
         <div className="bench-show-details">
-          <ul className='bench-show-list'>
-            <li>Description: {bench.description}</li>
-            <li>Seats: {bench.seating}</li>
-            <li>Latitude: {bench.lat}</li>
-            <li>Longitude: {bench.lng}</li>
-          </ul>
         </div>
       </div>
     )
