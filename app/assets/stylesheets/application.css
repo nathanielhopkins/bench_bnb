@@ -27,3 +27,22 @@
 .right-pane {
   margin: 40px;
 }
+
+.bench-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.bench-show-details {
+  margin-left: 40px;
+  padding: 20px;
+  width: 400px;
+  height: 480px;
+}
+
+ul.bench-detail-list > li {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
