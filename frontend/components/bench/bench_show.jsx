@@ -1,36 +1,27 @@
 import React from 'react';
 import BenchMap from './bench_map';
+import BenchDetail from './bench_detail';
 
-class BenchShow extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+const BenchShow = ({ bench, benchId, fetchBench }) => {
+  const benches = {
+    [benchId]: bench
+  };
 
-  componentDidMount() {
-    this.props.fetchBench(this.props.benchId)
-  }
-
-  render() {
-    const { bench, benchId, fetchBench } = this.props;
-    const benches = {
-      [benchId]: bench
-    };
-    
-    return(
-      <div className="bench-show">
-        <div className='bench-show-map'>
-          <BenchMap 
-            benches={benches} 
-            benchId={benchId}
-            fetchBench={fetchBench}
-            singleBench={true}
-          />
-        </div>
-        <div className="bench-show-details">
-        </div>
+  return(
+    <div className="bench-show">
+      <div className='bench-show-map'>
+        <BenchMap 
+          benches={benches} 
+          benchId={benchId}
+          fetchBench={fetchBench}
+          singleBench={true}
+        />
       </div>
-    )
-  }
-}
+      <div className="bench-show-details">
+        <BenchDetail bench={bench} />
+      </div>
+    </div>
+  )
+};
 
 export default BenchShow;
