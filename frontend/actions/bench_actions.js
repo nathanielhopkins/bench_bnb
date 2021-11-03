@@ -13,6 +13,11 @@ export const receiveBench = bench => ({
   bench
 });
 
+export const fetchBench = benchId => dispatch => {
+  APIUtil.fetchBench(benchId)
+    .then(bench => dispatch(receiveBench(bench)))
+}
+
 export const fetchBenches = (filters) => dispatch => {
   APIUtil.fetchBenches(filters)
     .then(benches => dispatch(receiveBenches(benches)));
