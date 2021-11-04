@@ -1,5 +1,5 @@
 class Bench < ApplicationRecord
-  validates :description, :lat, :lng, :seating, presence: true
+  validates :description, :lat, :lng, :seating, :author, presence: true
 
   def self.in_bounds(bounds)
     # Filters all benches and returns those within passed bounds
