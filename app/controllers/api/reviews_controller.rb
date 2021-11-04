@@ -1,8 +1,7 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.find_by_bench(params[:bench_id])
-
-    render :index
+    @reviews = Review.where(benchId: params[:bench_id])
+    render json: @reviews
   end
 
   def create
