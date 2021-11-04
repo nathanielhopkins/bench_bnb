@@ -29,3 +29,11 @@ export const fetchBenchReviews = (benchId) => {
     url: `/api/benches/${benchId}/reviews`
   })
 }
+
+export const createBenchReview = (bench) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/benches/${bench.id}/reviews`,
+    data: { bench }
+  })
+}
