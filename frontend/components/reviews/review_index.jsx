@@ -14,7 +14,7 @@ class ReviewIndex extends React.Component {
         return (
           <ul key={review.id}>
             <li>Rating: {review.rating}</li>
-            <li>Comment: {review.comment}</li>
+            <li>Comment: {review.comment} - by {review.author}</li>
           </ul>
         )
       })
