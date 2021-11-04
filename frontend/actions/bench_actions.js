@@ -1,6 +1,7 @@
 export const RECEIVE_BENCHES = 'RECEIVE_BENCHES';
 export const RECEIVE_BENCH = 'RECEIVE_BENCH';
 export const RECEIVE_BENCH_REVIEWS = 'RECEIVE_BENCH_REVIEWS'
+export const RECEIVE_BENCH_REVIEW = 'RECEIVE_BENCH_REVIEW'
 
 import * as APIUtil from "../util/bench_api_util";
 
@@ -20,6 +21,11 @@ export const receiveBenchReviews = (reviews, benchId) => ({
   benchId
 });
 
+export const receiveBenchReview = (review) => ({
+  type: RECEIVE_BENCH_REVIEWS,
+  review
+})
+
 export const fetchBench = benchId => dispatch => {
   APIUtil.fetchBench(benchId)
     .then(bench => dispatch(receiveBench(bench)))
@@ -38,4 +44,9 @@ export const createBench = bench => dispatch => {
 export const fetchBenchReviews = benchId => dispatch => {
   APIUtil.fetchBenchReviews(benchId)
     .then(reviews => dispatch(receiveBenchReviews(reviews, benchId)));
+}
+
+export const createBenchReview = bench => dispatch => {
+  APIUtil.createBenchReview(bench)
+    .then(review => receiveBenchReview(review))
 }
