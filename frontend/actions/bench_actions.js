@@ -36,5 +36,5 @@ export const createBench = bench => dispatch => {
 
 export const fetchBenchReviews = benchId => dispatch => {
   APIUtil.fetchBenchReviews(benchId)
-    .then(reviews => dispatch(receiveBenchReviews));
+    .then(reviews => dispatch(receiveBenchReviews(reviews)));
 }
