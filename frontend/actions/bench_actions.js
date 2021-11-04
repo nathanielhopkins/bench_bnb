@@ -14,9 +14,10 @@ export const receiveBench = bench => ({
   bench
 });
 
-export const receiveBenchReviews = reviews => ({
+export const receiveBenchReviews = (reviews, benchId) => ({
   type: RECEIVE_BENCH_REVIEWS,
-  reviews
+  reviews,
+  benchId
 });
 
 export const fetchBench = benchId => dispatch => {
@@ -36,5 +37,5 @@ export const createBench = bench => dispatch => {
 
 export const fetchBenchReviews = benchId => dispatch => {
   APIUtil.fetchBenchReviews(benchId)
-    .then(reviews => dispatch(receiveBenchReviews(reviews)));
+    .then(reviews => dispatch(receiveBenchReviews(reviews, benchId)));
 }

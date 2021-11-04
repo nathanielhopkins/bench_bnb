@@ -4,7 +4,7 @@ const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_BENCH_REVIEWS:
-      return action.reviews;
+      return Object.assign({}, state, {[action.benchId]: action.reviews});
     default:
       return state;
   };
