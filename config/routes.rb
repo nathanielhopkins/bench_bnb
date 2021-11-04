@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy ]
     resources :benches, only: [:index, :create, :show] do
-      resources :review, only: [:index, :create]
+      resources :reviews, only: [:index, :create]
     end
   end
 end
