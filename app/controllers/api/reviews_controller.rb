@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.find_by(benchId: params[:benchId])
+    @reviews = Review.find_by_bench(params[:bench_id])
 
     render :index
   end
