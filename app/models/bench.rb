@@ -10,5 +10,10 @@ class Bench < ApplicationRecord
     return filtered
   end
 
-  has_many :reviews
+  has_many(
+    :reviews,
+    class_name: "Review",
+    foreign_key: :benchId,
+    primary_key: :id
+  )
 end
