@@ -9,4 +9,6 @@ class Bench < ApplicationRecord
     
     return filtered
   end
+
+  has_many :reviews
 end
