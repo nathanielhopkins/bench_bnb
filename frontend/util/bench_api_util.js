@@ -22,3 +22,10 @@ export const createBench = (bench) => {
     data: bench
   })
 }
+
+export const fetchBenchReviews = (benchId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/benches/${benchId}/review`
+  })
+}
