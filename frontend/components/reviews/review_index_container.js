@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import ReviewIndex from './review_index';
 
-const mapStateToProps = state => ({
-  reviews: state.entities.reviews[this.props.benchId]
+const mapStateToProps = (state, ownProps) => ({
+  reviews: state.entities.reviews[ownProps.benchId],
+  benchId: ownProps.benchId
 });
 
 const mapDispatchToProps = dispatch => ({
