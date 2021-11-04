@@ -18,10 +18,9 @@ class BenchMap extends React.Component {
     if(this.props.singleBench) {
       this.props.fetchBench(this.props.benchId);
     } else {
-      this.addMarkerListeners();
+      this.addMapListeners();
       this.MarkerManager.updateMarkers(this.props.benches);
     }
-
   };
 
   componentDidUpdate() {
@@ -37,12 +36,13 @@ class BenchMap extends React.Component {
       };
       this.map.setOptions(newMapOptions);
     } else {
-      // set markers for all benches in area
+      // set markers for all benches in area then call addMarkerListeners
       this.MarkerManager.updateMarkers(this.props.benches);
+      this.addMarkerListeners();
     }
   }
 
-  addMarkerListeners() {
+  addMapListeners() {
     // create idle listener that calls updateFilter with new bounds
     this.map.addListener("idle", () => {
       // retrieve raw bounds data and package as bounds for API
@@ -60,6 +60,17 @@ class BenchMap extends React.Component {
     // add click handler to map
     this.map.addListener('click', (e) => {
       this.handleClick(e.latLng);
+    });
+  }
+
+  addMarkerListeners() {
+    // add listeners to each marker that links to show page
+    const markers = Object.entries(this.MarkerManager.markers);
+  
+    markers.forEach(marker => {
+      marker[1].addListener('click', () =>{
+        this.props.history.push(`/benches/${marker[0]}`);
+      })
     });
   }
 
