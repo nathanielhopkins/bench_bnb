@@ -10,6 +10,17 @@ class Bench < ApplicationRecord
     return filtered
   end
 
+  def rating
+    if(self.reviews.length > 0)
+      sumRating = 0
+      self.reviews.each {|review| sumRating += review.rating }
+      avgRating = sumRating / self.reviews.length
+      return avgRating
+    else
+      return "N/A"
+    end
+  end
+
   has_many(
     :reviews,
     class_name: "Review",
