@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BenchMap from './bench_map';
 import BenchDetail from './bench_detail';
+import ReviewIndexContainer from '../reviews/review_index_container';
 
 const BenchShow = ({ bench, benchId, fetchBench }) => {
   const benches = {
@@ -21,6 +22,7 @@ const BenchShow = ({ bench, benchId, fetchBench }) => {
       </div>
       <div className="bench-show-details">
         <BenchDetail bench={bench} />
+        <ReviewIndexContainer benchId={benchId} />
       </div>
     </div>
   )
