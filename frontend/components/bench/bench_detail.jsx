@@ -6,6 +6,7 @@ const BenchDetail = ({bench}) => {
     render = (
       <div>
         <ul className="bench-detail-list">
+          <li>Rating: {bench.rating}</li>
           <li>Description: {bench.description}</li>
           <li>Number of Seats: {bench.seating}</li>
           <li>Latitude: {bench.lat}</li>
