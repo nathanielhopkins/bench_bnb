@@ -46,7 +46,7 @@ export const fetchBenchReviews = benchId => dispatch => {
     .then(reviews => dispatch(receiveBenchReviews(reviews, benchId)));
 }
 
-export const createBenchReview = bench => dispatch => {
-  APIUtil.createBenchReview(bench)
+export const createBenchReview = review => dispatch => {
+  APIUtil.createBenchReview(review)
     .then(review => receiveBenchReview(review))
 }
