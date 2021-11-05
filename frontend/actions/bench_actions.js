@@ -22,7 +22,7 @@ export const receiveBenchReviews = (reviews, benchId) => ({
 });
 
 export const receiveBenchReview = (review) => ({
-  type: RECEIVE_BENCH_REVIEWS,
+  type: RECEIVE_BENCH_REVIEW,
   review
 })
 
