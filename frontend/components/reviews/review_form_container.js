@@ -4,7 +4,7 @@ import { createBenchReview } from '../../actions/bench_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   benchId: ownProps.benchId,
-  author: state.entitites.users[state.session.id].username
+  author: state.entities.users[state.session.id].username
 });
 
 const mapDispatchToProps = dispatch => ({
