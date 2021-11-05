@@ -1,10 +1,12 @@
-import { RECEIVE_BENCH_REVIEWS } from "../actions/bench_actions";
+import { RECEIVE_BENCH_REVIEWS, RECEIVE_BENCH_REVIEW } from "../actions/bench_actions";
 
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_BENCH_REVIEWS:
-      return Object.assign({}, state, {[action.benchId]: action.reviews});
+      return action.reviews;
+    case RECEIVE_BENCH_REVIEW:
+      return Object.assign({}, state, {[action.review.id]: action.review })
     default:
       return state;
   };
