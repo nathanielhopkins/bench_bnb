@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
@@ -10,8 +10,8 @@ import BenchShowContainer from './bench/bench_show_container';
 
 const App = () => (
   <div>
-    <header>
-      <h1>Bench BnB</h1>
+    <header className='main-header'>
+      <Link to='/'><h1>Bench BnB</h1></Link>
       <GreetingContainer />
     </header>
     <Switch>

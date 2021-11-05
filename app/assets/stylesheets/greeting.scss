@@ -1,0 +1,24 @@
+.main-header {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  background: rgb(57, 38, 92);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-name {
+  padding-top: 5px;
+  margin-left: 20px;
+  margin-top: 0px;
+  font-size: 18px;
+
+}
+
+.header-button {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
