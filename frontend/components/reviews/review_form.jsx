@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ReviewForm = ({benchId, author, createBenchReview}) => {
+
   return(
-    <div>This is a ReviewForm</div>
+    <div className='review-form'>
+      <Link to={`/benches/${benchId}`}><button>Cancel</button></Link>
+    </div>
   )
 };
 

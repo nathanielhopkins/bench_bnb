@@ -6,7 +6,8 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    const { reviews } = this.props;
+    const { reviews, benchId } = this.props;
+    const reviewLink = `benches/${benchId}/review`
     let reviewsList;
     if (reviews) {
       const reviewsArr = Object.values(reviews);
