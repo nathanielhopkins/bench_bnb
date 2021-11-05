@@ -30,10 +30,10 @@ export const fetchBenchReviews = (benchId) => {
   })
 }
 
-export const createBenchReview = (bench) => {
+export const createBenchReview = (review) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/benches/${bench.id}/reviews`,
-    data: { bench }
+    url: `/api/benches/${review.benchId}/reviews`,
+    data: { review }
   })
 }
