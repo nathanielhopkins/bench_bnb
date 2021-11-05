@@ -3,7 +3,7 @@ import ReviewIndex from './review_index';
 import { fetchBenchReviews } from '../../actions/bench_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  reviews: state.entities.reviews[ownProps.benchId],
+  reviews: state.entities.reviews,
   benchId: ownProps.benchId
 });
 
