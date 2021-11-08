@@ -35,11 +35,6 @@
   }
 }
 
-.bench-index-item {
-  padding: 20px;
-  border: 1px solid black;
-}
-
 .right-half {
     width: 400px;
     margin-left: 50px;
@@ -64,10 +59,27 @@
 }
 .bench-index-item {
   margin-bottom: 5px;
+  border: 1px solid black;
+  padding: 20px;
+  padding-bottom: 15px;
 }
 
 .bench-index-item:hover {
   cursor: pointer;
+}
+
+.index-item-info {
+  display: flex;
+  flex-direction: column;
+
+  .index-item-category {
+    margin-bottom: 5px;
+  }
+
+  .index-item-copy {
+    margin-left: 15px;
+    margin-bottom: 5px;
+  }
 }
 
 .bench-show {
