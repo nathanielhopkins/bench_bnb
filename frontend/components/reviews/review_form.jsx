@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -19,8 +18,12 @@ class ReviewForm extends React.Component {
     return e => this.setState({[property]: e.target.value })
   }
 
-  handleSubmit() {
-    return e => console.log(this.state);
+  handleSubmit(e) {
+    e.preventDefault();
+    let review = Object.assign({}, this.state);
+    let history = this.props.history;
+    this.props.createBenchReview(review)
+      .then(() => history.replace(`/benches/${this.props.benchId}`));
   }
 
   render() {
@@ -50,7 +53,7 @@ class ReviewForm extends React.Component {
             />
         </label>
         <button 
-          onClick={this.handleSubmit()}
+          onClick={this.handleSubmit}
           className='review-form-button review-submit'
           >Submit Review</button>
         <Link to={`/benches/${benchId}`}>
@@ -61,4 +64,4 @@ class ReviewForm extends React.Component {
   }
 };
 
-export default ReviewForm;
+export default withRouter(ReviewForm);
