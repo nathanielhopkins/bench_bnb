@@ -26,11 +26,12 @@ export default class SessionForm extends React.Component {
     const { formType } = this.props;
     const header = formType == 'login' ? 'Log In!' : 'Sign Up!';
     const linkTo = formType == 'login' ? '/signup' : '/login';
-    const linkToLabel = formType == 'login' ? "Sign Up" : "Log In";
+    const linkToLabel = formType == 'login' ? "sign up" : "log in";
 
     const formRender = (
       <div className='session-form'>
         <h1 className='form-header'>{header}</h1>
+        <p>Please {formType} or <Link className='link-to' to={linkTo}>{linkToLabel} instead</Link></p>
         <form>
           <label>Username:
             <input
@@ -50,7 +51,6 @@ export default class SessionForm extends React.Component {
             onClick={this.handleSubmit.bind(this)}
           >{header}</button>
         </form>
-        <Link to={linkTo}>{linkToLabel}</Link>
       </div>
     );
     
