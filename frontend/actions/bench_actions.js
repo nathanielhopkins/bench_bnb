@@ -31,22 +31,22 @@ export const fetchBench = benchId => dispatch => {
     .then(bench => dispatch(receiveBench(bench)))
 }
 
-export const fetchBenches = (filters) => dispatch => {
+export const fetchBenches = (filters) => dispatch => (
   APIUtil.fetchBenches(filters)
-    .then(benches => dispatch(receiveBenches(benches)));
-};
+    .then(benches => dispatch(receiveBenches(benches)))
+);
 
-export const createBench = bench => dispatch => {
+export const createBench = bench => dispatch => (
   APIUtil.createBench(bench)
-    .then(bench => dispatch(receiveBench(bench)));
-};
+    .then(bench => dispatch(receiveBench(bench)))
+);
 
-export const fetchBenchReviews = benchId => dispatch => {
+export const fetchBenchReviews = benchId => dispatch => (
   APIUtil.fetchBenchReviews(benchId)
-    .then(reviews => dispatch(receiveBenchReviews(reviews, benchId)));
-}
+    .then(reviews => dispatch(receiveBenchReviews(reviews, benchId)))
+);
 
-export const createBenchReview = review => dispatch => {
+export const createBenchReview = review => dispatch => (
   APIUtil.createBenchReview(review)
-    .then(review => receiveBenchReview(review))
-}
+    .then(review => dispatch(receiveBenchReview(review)))
+);
