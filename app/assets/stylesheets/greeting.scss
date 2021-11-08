@@ -8,6 +8,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  h1:hover {
+    color: gold;
+  }
 }
 
 .header-name {
