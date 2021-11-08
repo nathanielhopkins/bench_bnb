@@ -37,47 +37,50 @@ class BenchForm extends React.Component {
       <div className='bench-form-container'>
         <h3 className="bench-form-title">Create A Bench!</h3>
         <form className="bench-form">
-          <label className='bench-field'>Decription:
+          <div className='bench-field'>
+            <label>Decription:</label>
             <input 
               type='text' 
               className='bench-field'
               value={this.state.description}
               onChange={this.update('description')}
             />
-          </label>
-          <label className='bench-field'>Number of Seats:
+          </div>
+          <div className='bench-field'>
+            <label>Number of Seats:</label>
             <input
               type='number'
               className='bench-field'
               value={this.state.seating}
               onChange={this.update('seating')}
             />
-          </label>
-          <label className='bench-field'>Latitude:
+          </div>
+          <div className='bench-field'>
+            <label>Latitude:</label>
             <input
               type='number'
               className='bench-field'
               value={this.state.lat}
               disabled
             />
-          </label>
-          <label className='bench-field'>Longitude:
+          </div>
+          <div className='bench-field'>
+            <label>Longitude:</label>
             <input
               type='number'
               className='bench-field'
               value={this.state.lng}
               disabled
             />
-          </label>
-          <div className="button-holder">
-            <input 
-              type="submit" 
-              value="Create Bench" 
-              className="bench-form-button"
-              onClick={this.handleSubmit.bind(this)}
-            />
           </div>
         </form>
+        <div className="button-holder">
+          <button 
+            type="submit" 
+            className="bench-form-button"
+            onClick={this.handleSubmit.bind(this)}
+          >Create Bench</button>
+        </div>
         <div className="button-holder">
           <button 
             className="bench-form-button"

@@ -105,3 +105,54 @@
   margin-bottom: 10px;
   padding-left: 10px;
 }
+
+.bench-form-container {
+  margin: 40px auto;
+  padding: 20px;
+  width: 400px;
+  height: 600px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .bench-form-title {
+    font-size: 25px;
+  }
+}
+
+.bench-form {
+  margin: 20px 0;
+}
+
+
+.bench-field {
+  width: 360px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  label {
+    margin-top: 15px;
+  }
+
+  input {
+    width: 180px;
+    margin-top: 10px;
+  }
+}
+
+.bench-form-button {
+  margin-left: 0;
+  margin-top: 15px;
+  color: white;
+  font-size: 18px;
+  padding: 5px 20px;
+  background: rgb(57, 38, 92);
+  border-radius: 10px;
+}
+
+.bench-form-button:hover {
+  cursor: pointer;
+  color: gold;
+}
