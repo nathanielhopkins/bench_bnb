@@ -18,19 +18,19 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const login = user => dispatch => {
+export const login = user => dispatch => (
   APISessionUtils.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-    err => dispatch(receiveErrors(err.responseJSON)));
-};
+    err => dispatch(receiveErrors(err.responseJSON)))
+);
 
-export const logout = () => dispatch => {
+export const logout = () => dispatch => (
   APISessionUtils.logout()
-    .then(user => dispatch(logoutCurrentUser()));
-};
+    .then(user => dispatch(logoutCurrentUser()))
+);
 
-export const signup = user => dispatch => {
+export const signup = user => dispatch => (
   APISessionUtils.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-    err => dispatch(receiveErrors(err.responseJSON)));
-}
+    err => dispatch(receiveErrors(err.responseJSON)))
+);
