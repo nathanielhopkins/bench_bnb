@@ -6,7 +6,7 @@
   margin-bottom: 50px;
 
   h3 {
-    margin-left: 0
+    margin-left: 0;
   }
 
   ul {
@@ -43,9 +43,14 @@
     margin-left: 0px;
     margin-bottom: 20px;
   }
+
+  label, button {
+    margin-left: 10px;
+  }
 }
 
 .review-form-rating {
+  margin-top: 5px;
   width: 100px;
   padding: 5px;
   font-size: 16px;
@@ -53,7 +58,10 @@
 }
 
 .review-form-comment {
-  padding: 5px;
+  font-family: inherit;
+  font-size: 16px;
+  margin-top: 5px;
+  padding: 10px;
   margin-bottom: 10px;
 }
 
