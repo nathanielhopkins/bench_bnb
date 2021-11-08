@@ -17,7 +17,7 @@ b4 = Bench.create!(seating: 2, lat: 37.78160139416755, lng: -122.38716945206654,
 
 # Review seeds
 
-r1 = Review.create!(benchId: 1, rate: 5, comment: 'Great spot for a nap!', author: "Steve")
-r2 = Review.create!(benchId: 2, rate: 4, comment: "Nice bench, but I'm not a tennis fan.", author: "Kim")
-r3 = Review.create!(benchId: 3, rate: 5, comment: 'Love the gardens, would definitely revisit!', author: "Sean")
-r4 = Review.create!(benchId: 4, rate: 3, comment: 'Okay views, but location is terrible', author: "Bill")
+r1 = Review.create!(benchId: 1, rating: 5, comment: 'Great spot for a nap!', author: "Steve")
+r2 = Review.create!(benchId: 2, rating: 4, comment: "Nice bench, but I'm not a tennis fan.", author: "Kim")
+r3 = Review.create!(benchId: 3, rating: 5, comment: 'Love the gardens, would definitely revisit!', author: "Sean")
+r4 = Review.create!(benchId: 4, rating: 3, comment: 'Okay views, but location is terrible', author: "Bill")
