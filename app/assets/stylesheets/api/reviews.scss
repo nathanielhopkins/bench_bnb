@@ -2,16 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.reviews {
+  margin-bottom: 50px;
+
+  h3 {
+    margin-left: 0
+  }
+
+  ul {
+    margin-left: 40px;
+    list-style-position: outside;
+    margin-bottom: 20px;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.review-form-button {
+  margin-left: 0;
+  margin-top: 15px;
+  color: white;
+  font-size: 18px;
+  padding: 5px 20px;
+  background: rgb(57, 38, 92);
+  border-radius: 10px;
+}
+
+.review-form-button:hover {
+  background: rgb(42, 28, 68);
+  color: gold;
+}
+
 .review-form {
   display: flex;
   flex-direction: column;
+
+  h3 {
+    font-size: 25px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
 }
 
 .review-form-rating {
   width: 100px;
   padding: 5px;
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .review-form-comment {
@@ -19,16 +57,6 @@
   margin-bottom: 10px;
 }
 
-.review-form-submit {
-  width: 150px;
-  height: 20px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
-.review-form-cancel {
-  width: 60px;
-  height: 20px;
-  margin-left: 10px;
-  margin-bottom: 30px;
+.review-submit {
+  width: 200px;
 }

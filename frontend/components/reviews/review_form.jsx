@@ -51,10 +51,10 @@ class ReviewForm extends React.Component {
         </label>
         <button 
           onClick={this.handleSubmit()}
-          className='review-form-submit'
+          className='review-form-button review-submit'
           >Submit Review</button>
         <Link to={`/benches/${benchId}`}>
-          <button className='review-form-cancel'>Cancel</button>
+          <button className='review-form-button'>Cancel</button>
         </Link>
       </div>
     )

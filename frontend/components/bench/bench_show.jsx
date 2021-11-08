@@ -12,7 +12,11 @@ const BenchShow = ({ bench, benchId, fetchBench }) => {
 
   const reviewLink = `/benches/${benchId}/review`;
   const reviewLinkToggle = useLocation().pathname == `/benches/${benchId}` ? 
-  <Link to={reviewLink}>Leave a Review</Link> : null
+  <Link to={reviewLink}>
+    <button className='review-form-button'>
+      Leave a Review
+    </button>
+    </Link> : null
 
   return(
     <div className="bench-show">
