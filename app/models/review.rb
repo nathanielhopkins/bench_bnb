@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :rating, :comment, presence: true
+  validates :rating, :comment, :author, presence: true
 
   belongs_to(
     :bench,
