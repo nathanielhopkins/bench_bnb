@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, Route, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util';
 import BenchMap from './bench_map';
 import BenchDetail from './bench_detail';
 import ReviewIndexContainer from '../reviews/review_index_container';
@@ -33,9 +34,9 @@ const BenchShow = ({ bench, benchId, fetchBench }) => {
         <BenchDetail bench={bench} />
         <ReviewIndexContainer benchId={benchId} />
         {reviewLinkToggle}
-        <Route 
+        <ProtectedRoute 
           exact path="/benches/:benchId/review" 
-          render={() => <ReviewFormContainer benchId={benchId} />}
+          component={()=><ReviewFormContainer benchId={benchId} />}
         />
       </div>
     </div>
