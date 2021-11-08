@@ -14,7 +14,7 @@ class Bench < ApplicationRecord
     if(self.reviews.length > 0)
       sumRating = 0
       self.reviews.each {|review| sumRating += review.rating }
-      avgRating = sumRating / self.reviews.length
+      avgRating = sumRating.to_f / self.reviews.length
       return avgRating
     else
       return "N/A"
