@@ -22,6 +22,19 @@
   overflow-y: scroll;
 }
 
+.filter {
+  .filter-header {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+}
+
 .bench-index-item {
   padding: 20px;
   border: 1px solid black;

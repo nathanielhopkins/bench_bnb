@@ -18,10 +18,10 @@ class FilterForm extends React.Component {
 
   render() {
     return(
-      <div>
-        <span className="filter">Filter results:</span>
+      <div className="filter">
+        <h4 className='filter-header'>Filter results:</h4>
         <br />
-        <label>Mininum Seats:
+        <label>Mininum Seats: 
           <input
             type="number"
             value={this.state.minSeating}
@@ -29,7 +29,7 @@ class FilterForm extends React.Component {
           />
         </label>
         <br />
-        <label>Maximum Seats:
+        <label>Maximum Seats: 
           <input
             type="number"
             value={this.state.maxSeating}
