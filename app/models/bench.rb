@@ -27,4 +27,6 @@ class Bench < ApplicationRecord
     foreign_key: :benchId,
     primary_key: :id
   )
+
+  has_one_attached :photo
 end
