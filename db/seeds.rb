@@ -14,7 +14,12 @@ b2 = Bench.create!(seating: 4, lat: 37.759114, lng: -122.422802, description: 'M
 b3 = Bench.create!(seating: 2, lat: 37.784809691653955, lng: -122.40222970016015, description: 'Backless two-seater circling Yerba Buena Gardens') 
 b4 = Bench.create!(seating: 2, lat: 37.78160139416755, lng: -122.38716945206654, description: 'Small bench overlooking South Beach')
 
+# Attach S3 photos to Benches
 
+b1.photo.attach(io: File.open('app/assets/images/b1.png'), filename: 'b1.png')
+b2.photo.attach(io: File.open('app/assets/images/b2.png'), filename: 'b2.png')
+b3.photo.attach(io: File.open('app/assets/images/b3.png'), filename: 'b3.png')
+b4.photo.attach(io: File.open('app/assets/images/b4.png'), filename: 'b4.png')
 # Review seeds
 
 r1 = Review.create!(benchId: 1, rating: 5, comment: 'Great spot for a nap!', author: "Steve")
