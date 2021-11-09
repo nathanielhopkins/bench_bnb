@@ -16,10 +16,10 @@ b4 = Bench.create!(seating: 2, lat: 37.78160139416755, lng: -122.38716945206654,
 
 # Attach S3 photos to Benches
 
-b1.photo.attach(io: File.open('app/assets/images/b1.png'), filename: 'b1.png')
-b2.photo.attach(io: File.open('app/assets/images/b2.png'), filename: 'b2.png')
-b3.photo.attach(io: File.open('app/assets/images/b3.png'), filename: 'b3.png')
-b4.photo.attach(io: File.open('app/assets/images/b4.png'), filename: 'b4.png')
+b1.photo.attach(io: File.open('app/assets/images/b1.jpg'), filename: 'b1.jpg')
+b2.photo.attach(io: File.open('app/assets/images/b2.jpg'), filename: 'b2.jpg')
+b3.photo.attach(io: File.open('app/assets/images/b3.jpg'), filename: 'b3.jpg')
+b4.photo.attach(io: File.open('app/assets/images/b4.jpg'), filename: 'b4.jpg')
 # Review seeds
 
 r1 = Review.create!(benchId: 1, rating: 5, comment: 'Great spot for a nap!', author: "Steve")
