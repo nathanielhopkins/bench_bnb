@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use Figaro to encrypt API keys
 gem 'figaro'
+# Use S3 gem for photo storage
+gem "aws-sdk-s3"
 
 #Additional Gems:
 gem 'better_errors'
