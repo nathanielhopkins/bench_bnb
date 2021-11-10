@@ -97,8 +97,16 @@
   overflow-y: scroll;
 }
 
+.bench-detail-photo {
+  width: 380px;
+  height: auto;
+  max-height: 300px;
+  margin-bottom: 30px;
+}
+
 .bench-detail-list {
   margin-bottom: 30px;
+  margin-left: 10px;
 }
 
 .bench-detail-list > li {
