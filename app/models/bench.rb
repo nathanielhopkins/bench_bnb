@@ -1,5 +1,14 @@
 class Bench < ApplicationRecord
   validates :description, :lat, :lng, :seating, presence: true
+  validate :photo_attached
+
+  def photo_attached
+    if self.photo.attached?
+      return true
+    else
+      return false
+    end
+  end
 
   def self.in_bounds(bounds)
     # Filters all benches and returns those within passed bounds
