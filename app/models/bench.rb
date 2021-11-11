@@ -3,10 +3,8 @@ class Bench < ApplicationRecord
   validate :photo_attached
 
   def photo_attached
-    if self.photo.attached?
-      return true
-    else
-      return false
+    unless self.photo.attached?
+      errors[:photo] << 'must be attached'
     end
   end
 
