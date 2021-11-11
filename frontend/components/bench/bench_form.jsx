@@ -40,10 +40,15 @@ class BenchForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state)
-    // const bench = Object.assign({}, this.state);
-    // this.props.createBench({bench: bench})
-    //   .then(this.props.history.replace("/"));
+    const formData = new FormData();
+    formData.append('bench[description]', this.state.description);
+    formData.append('bench[seating]', this.state.seating);
+    formData.append('bench[lat]', this.state.lat);
+    formData.append('bench[lng]', this.state.lng);
+    formData.append('bench[photo]', this.state.photoFile);
+
+    this.props.createBench(formData)
+      .then(this.props.history.replace("/"));
   }
 
   render() {
