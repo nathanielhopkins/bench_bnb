@@ -60,26 +60,38 @@
 .bench-index-item {
   margin-bottom: 5px;
   border: 1px solid black;
-  padding: 20px;
-  padding-bottom: 15px;
 }
 
 .bench-index-item:hover {
   cursor: pointer;
 }
 
+.bench-index-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .index-item-info {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  padding-bottom: 15px;
 
+  
   .index-item-category {
     margin-bottom: 5px;
   }
-
+  
   .index-item-copy {
     margin-left: 15px;
     margin-bottom: 5px;
   }
+}
+
+.bench-item-photo {
+  width: 200px;
+  height: 100%;
+  margin-bottom: 10px;
 }
 
 .bench-show {
