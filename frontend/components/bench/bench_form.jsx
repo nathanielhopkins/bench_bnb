@@ -9,7 +9,9 @@ class BenchForm extends React.Component {
       description: "",
       seating: 2,
       lat: this.props.lat,
-      lng: this.props.lng
+      lng: this.props.lng,
+      photoFile: null,
+      photoUrl: null
     }
 
     this.cancelForm = this.cancelForm.bind(this);
@@ -25,14 +27,29 @@ class BenchForm extends React.Component {
     return e => this.setState({ [property]: e.target.value })
   }
 
+  handleFile(e) {
+    const file = e.currentTarget.files[0]
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({photoFile: file, photoUrl: fileReader.result});
+    }
+    if (file) {
+      fileReader.readAsDataURL(file);
+    };
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const bench = Object.assign({}, this.state);
-    this.props.createBench({bench: bench})
-      .then(this.props.history.replace("/"));
+    console.log(this.state)
+    // const bench = Object.assign({}, this.state);
+    // this.props.createBench({bench: bench})
+    //   .then(this.props.history.replace("/"));
   }
 
   render() {
+    const imagePreview = this.state.photoUrl ? 
+      <img src={this.state.photoUrl} className='img-preview'/> : 
+      <h3>Add an Image</h3>
     return(
       <div className='bench-form-container'>
         <h3 className="bench-form-title">Create A Bench!</h3>
@@ -71,6 +88,14 @@ class BenchForm extends React.Component {
               className='bench-field'
               value={this.state.lng}
               disabled
+            />
+          </div>
+          <div className='bench-photo-input'>
+            <h3>Image Preview</h3>
+            {imagePreview}
+            <input 
+              type='file' 
+              onChange={this.handleFile.bind(this)}
             />
           </div>
         </form>
