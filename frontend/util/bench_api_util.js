@@ -15,11 +15,13 @@ export const fetchBench = benchId => {
   })
 }
 
-export const createBench = (bench) => {
+export const createBench = (formData) => {
   return $.ajax({
     method: 'POST',
     url: '/api/benches',
-    data: bench
+    data: formData,
+    contentType: false,
+    processData: false
   })
 }
 
