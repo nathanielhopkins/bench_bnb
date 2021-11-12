@@ -18,6 +18,11 @@ export const receiveErrors = errors => ({
   errors
 });
 
+export const clearSessionErrors = () => ({
+  type: RECEIVE_ERRORS,
+  errors: []
+})
+
 export const login = user => dispatch => (
   APISessionUtils.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
