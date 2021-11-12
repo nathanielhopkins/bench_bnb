@@ -46,7 +46,7 @@ export const fetchBenches = (filters) => dispatch => (
 export const createBench = bench => dispatch => (
   APIUtil.createBench(bench)
     .then(bench => dispatch(receiveBench(bench)),
-    err => dispatch(receiveBenchErrors(err.responseJSON)))
+      err => dispatch(receiveBenchErrors(err.responseJSON)))
 );
 
 export const fetchBenchReviews = benchId => dispatch => (
