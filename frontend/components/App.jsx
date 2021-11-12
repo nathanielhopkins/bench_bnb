@@ -7,6 +7,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import SearchContainer from './bench/search_container';
 import BenchFormContainer from './bench/bench_form_container';
 import BenchShowContainer from './bench/bench_show_container';
+import NotFound from "./errors/not_found";
 
 const App = () => (
   <div>
@@ -20,6 +21,7 @@ const App = () => (
       <ProtectedRoute path='/benches/new' component={BenchFormContainer} />
       <Route path='/benches/:benchId' component={BenchShowContainer} />
       <Route exact path="/" component={SearchContainer} />
+      <Route component={NotFound} />
     </Switch>
   </div>
 );
