@@ -30,3 +30,13 @@
   color: gold;
 }
 }
+
+.session-errors {
+  margin: 0 auto;
+  margin-top: 10px;
+  color: red;
+  
+  .session-error {
+    margin-bottom: 5px;
+  }
+}
