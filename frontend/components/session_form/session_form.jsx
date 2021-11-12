@@ -27,11 +27,17 @@ export default class SessionForm extends React.Component {
     const header = formType == 'login' ? 'Log In!' : 'Sign Up!';
     const linkTo = formType == 'login' ? '/signup' : '/login';
     const linkToLabel = formType == 'login' ? "sign up" : "log in";
+    const errors = Object.values(this.props.errors.session).map(error => {
+      return <li className='session-error' key={error}>{error}</li>
+    });
 
     const formRender = (
       <div className='session-form'>
         <h1 className='form-header'>{header}</h1>
         <p>Please {formType} or <Link className='link-to' to={linkTo}>{linkToLabel} instead</Link></p>
+        <ul className='session-errors'>
+          {errors}
+        </ul>
         <form>
           <label>Username:
             <input
