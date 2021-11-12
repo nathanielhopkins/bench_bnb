@@ -12,6 +12,10 @@ export default class SessionForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
+
   update(property) {
     return e => this.setState({ [property]: e.target.value })
   }
