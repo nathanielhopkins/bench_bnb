@@ -4,7 +4,8 @@ import { createBench } from '../../actions/bench_actions';
 
 const mapStateToProps = (state, { location }) => ({
   lat: new URLSearchParams(location.search).get("lat"),
-  lng: new URLSearchParams(location.search).get("lng")
+  lng: new URLSearchParams(location.search).get("lng"),
+  errors: state.errors.bench
 });
 
 const mapDispatchToProps = dispatch => ({
