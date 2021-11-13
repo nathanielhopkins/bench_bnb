@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BenchForm from './bench_form';
-import { createBench } from '../../actions/bench_actions';
+import { createBench, clearBenchErrors } from '../../actions/bench_actions';
 
 const mapStateToProps = (state, { location }) => ({
   lat: new URLSearchParams(location.search).get("lat"),
@@ -9,7 +9,8 @@ const mapStateToProps = (state, { location }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createBench: bench => dispatch(createBench(bench))
+  createBench: bench => dispatch(createBench(bench)),
+  clearBenchErrors: () => dispatch(clearBenchErrors())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BenchForm);

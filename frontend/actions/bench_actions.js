@@ -32,6 +32,10 @@ export const receiveBenchErrors = errors => ({
   errors
 });
 
+export const clearBenchErrors = () => ({
+  type: RECEIVE_BENCH_ERRORS,
+  errors: []
+})
 
 export const fetchBench = benchId => dispatch => {
   APIUtil.fetchBench(benchId)

@@ -18,8 +18,13 @@ class BenchForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearBenchErrors();
+  }
+
   cancelForm (e) {
     e.preventDefault();
+    this.props.clearBenchErrors();
     this.props.history.replace("/")
   }
 
