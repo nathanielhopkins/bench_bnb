@@ -50,16 +50,23 @@ class BenchForm extends React.Component {
     }
 
     this.props.createBench(formData)
-      .then(this.props.history.replace("/"));
+      .then(() => this.props.history.replace("/"))
+    
   }
 
   render() {
+    const errors = Object.values(this.props.errors).map(error => {
+      return <li className='session-error' key={error}>{error}</li>
+    });
     const imagePreview = this.state.photoUrl ? 
       <img src={this.state.photoUrl} className='img-preview'/> : 
       <h3>Add an Image</h3>
     return(
       <div className='bench-form-container'>
         <h3 className="bench-form-title">Create A Bench!</h3>
+        <ul className='bench-form-errors'>
+          {errors}
+        </ul>
         <form className="bench-form">
           <div className='bench-field'>
             <label>Decription:</label>
