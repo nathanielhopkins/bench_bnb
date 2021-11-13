@@ -69,7 +69,7 @@ class BenchForm extends React.Component {
     return(
       <div className='bench-form-container'>
         <h3 className="bench-form-title">Create A Bench!</h3>
-        <ul className='bench-form-errors'>
+        <ul className='session-errors'>
           {errors}
         </ul>
         <form className="bench-form">
