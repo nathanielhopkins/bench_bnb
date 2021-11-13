@@ -5,7 +5,7 @@ const BenchDetail = ({bench}) => {
   if(bench) {
     render = (
       <div>
-        <img src={bench.photoUrl} class='bench-detail-photo'></img>
+        <img src={bench.photoUrl} className='bench-detail-photo'></img>
         <ul className="bench-detail-list">
           <li>Rating: {bench.rating}</li>
           <li>Description: {bench.description}</li>
