@@ -3,6 +3,7 @@ export const RECEIVE_BENCH = 'RECEIVE_BENCH';
 export const RECEIVE_BENCH_REVIEWS = 'RECEIVE_BENCH_REVIEWS';
 export const RECEIVE_BENCH_REVIEW = 'RECEIVE_BENCH_REVIEW';
 export const RECEIVE_BENCH_ERRORS = 'RECEIVE_BENCH_ERRORS';
+export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 import * as APIUtil from "../util/bench_api_util";
 
@@ -35,7 +36,17 @@ export const receiveBenchErrors = errors => ({
 export const clearBenchErrors = () => ({
   type: RECEIVE_BENCH_ERRORS,
   errors: []
-})
+});
+
+export const receiveReviewErrors = errros => ({
+  type: RECEIVE_REVIEW_ERRORS,
+  errors
+});
+
+export const clearReviewErrors = () => ({
+  type: RECEIVE_BENCH_REVIEW,
+  errors: []
+});
 
 export const fetchBench = benchId => dispatch => {
   APIUtil.fetchBench(benchId)
@@ -60,5 +71,6 @@ export const fetchBenchReviews = benchId => dispatch => (
 
 export const createBenchReview = review => dispatch => (
   APIUtil.createBenchReview(review)
-    .then(review => dispatch(receiveBenchReview(review)))
+    .then(review => dispatch(receiveBenchReview(review)),
+    err => dispatch(receiveReviewErrors(err.responseJSON)))
 );
