@@ -17,7 +17,7 @@ class Bench < ApplicationRecord
     return filtered
   end
 
-  def rating
+  def avg_rating
     if(self.reviews.length > 0)
       sumRating = 0
       self.reviews.each {|review| sumRating += review.rating }

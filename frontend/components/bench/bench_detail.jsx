@@ -7,7 +7,7 @@ const BenchDetail = ({bench}) => {
       <div>
         <img src={bench.photoUrl} className='bench-detail-photo'></img>
         <ul className="bench-detail-list">
-          <li>Rating: {bench.rating}</li>
+          <li>Rating: {bench.avg_rating}</li>
           <li>Description: {bench.description}</li>
           <li>Number of Seats: {bench.seating}</li>
           <li>Latitude: {bench.lat}</li>

@@ -5,7 +5,7 @@ const BenchIndexItem = ({ bench }) => {
     <div className='bench-index-container'>
       <div className='index-item-info'>
         <span className='index-item-category'>Rating:</span>
-        <span className='index-item-copy'>{bench.rating}</span>
+        <span className='index-item-copy'>{bench.avg_rating}</span>
         <span className='index-item-category'>Description:</span>
         <span className='index-item-copy'>{bench.description}</span>
       </div>
