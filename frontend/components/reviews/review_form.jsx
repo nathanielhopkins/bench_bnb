@@ -14,6 +14,10 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearReviewErrors();
+  }
+
   update(property) {
     return e => this.setState({[property]: e.target.value })
   }
@@ -28,9 +32,15 @@ class ReviewForm extends React.Component {
 
   render() {
     const { benchId } = this.props;
+    const errors = this.props.errors.map(error => {
+      return <li className='session-error' key={error}>{error}</li>
+    });
     return(
       <div className='review-form'>
         <h3>Leave a Review:</h3>
+        <ul className='session-errors'>
+          {errors}
+        </ul>
         <label>Rating:
           <br/>
           <input 
