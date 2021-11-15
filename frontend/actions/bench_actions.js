@@ -38,7 +38,7 @@ export const clearBenchErrors = () => ({
   errors: []
 });
 
-export const receiveReviewErrors = errros => ({
+export const receiveReviewErrors = errors => ({
   type: RECEIVE_REVIEW_ERRORS,
   errors
 });
