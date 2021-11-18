@@ -1,6 +1,6 @@
 class Bench < ApplicationRecord
   validates :description, :lat, :lng, :seating, presence: true
-  validate :photo_attached
+  # validate :photo_attached
 
   def photo_attached
     unless self.photo.attached?
