@@ -9,6 +9,7 @@
 
 # Ignore frontend bundles and modules.
 bundle.js
+bundle.js*
 bundle.js.map
 /node_modules/
 
