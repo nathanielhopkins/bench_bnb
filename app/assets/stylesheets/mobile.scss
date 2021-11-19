@@ -1,0 +1,24 @@
+@media screen and (max-width: 720px) {
+  .user-pane, .bench-show {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-pane, .bench-show-map {
+    width: 90%;
+    height: 500px;
+    margin-bottom: 40px;
+  }
+
+  .right-pane, .bench-show-details {
+    width: 90%;
+    height: auto;
+  }
+
+  .bench-detail-photo {
+    align-self: center;
+    width: 90%;
+    height: auto;
+    
+  }
+}
